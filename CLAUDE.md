@@ -29,3 +29,12 @@ Personal portfolio site built from a Figma design, for job applications.
 - Responsive: match the mobile frames when they exist; otherwise adapt the desktop design.
 - Use `<Image />` from `astro:assets` for images in `src/assets/`.
 - Content language: French (`<html lang="fr">`) unless the design says otherwise.
+
+## Git workflow
+- `main` — production. Only receives merges from `dev`; whatever is on `main` gets deployed.
+- `dev` — integration branch. All work lands here first.
+- Feature branches — branched from `dev`, merged back into `dev`, then deleted.
+  Naming: `feature/<name>` (new page/section), `fix/<name>`, `docs/<name>`, `chore/<name>`.
+  Claude session branches (`claude/...`) count as feature branches: branch from `dev`, merge into `dev`.
+- Never commit directly to `main`. Release = merge `dev` into `main` once `npm run build` passes on `dev`.
+- Merge with `--no-ff` so each feature shows up as one merge commit.
