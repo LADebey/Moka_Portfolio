@@ -1,0 +1,39 @@
+/*
+ * Design tokens — placeholder values.
+ * Replace with the exact values from the Figma file (see design/design-notes.md).
+ */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1e1e1e;
+  --color-accent: #000000;
+
+  --font-heading: system-ui, sans-serif;
+  --font-body: system-ui, sans-serif;
+
+  --max-width: 1280px;
+  --gutter: 24px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = (await getCollection('projects', ({ data }) => !data.draft)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<BaseLayout title="Portfolio">
+  <main>
+    <h1>Portfolio</h1>
+    <p>Placeholder — the real home page will be built from the Figma file.</p>
+    <ul>
+      {projects.map((project) => <li>{project.data.title}</li>)}
+    </ul>
+  </main>
+</BaseLayout>
